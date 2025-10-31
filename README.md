@@ -1,17 +1,45 @@
+[![Python](https://img.shields.io/badge/Python-3.11-blue)]()
+[![ML Pipeline](https://img.shields.io/badge/Type-ML%20Classification-green)]()
+[![Dataset](https://img.shields.io/badge/Data-SDSS%20DR17-orange)]()
+[![License](https://img.shields.io/badge/License-MIT-lightgrey)]()
+
 # SDSS Stellar Classifier
 
-Training project to get started in Python Machine Learning and Data management.
+Training project to get started in Python Machine Learning and data pipelines using real astrophysical catalog data (SDSS DR17).
+
+This repository builds a stellar classifier capable of distinguishing **STAR**, **GALAXY**, and **QSO** objects from photometric magnitudes and redshift.
+
+📦 **Training data:**  
+https://www.kaggle.com/datasets/fedesoriano/stellar-classification-dataset-sdss17
+
+> ⚠️ **Requires Python 3.11**  
+Gradio / pydantic-core are not yet compatible with Python 3.14.
 
 ## Dependencies
 
-pandas : Python data analysis toolkit.
-numpy : Array computing in Python
-matplotlib : Visualizations
-seaborn : statistic data vizualization
-scikit-learn : scientific toolkit
-jupyter : data notebooks
+| Package | Purpose |
+|--------|---------|
+| **numpy** | numerical computing |
+| **pandas** | tabular data manipulation |
+| **matplotlib / seaborn** | visualization & EDA |
+| **scikit-learn** | ML pipeline + RandomForest |
+| **joblib** | saving model + label encoder |
+| **jupyter** | notebook experimentation |
+| **gradio** | small local web UI for inference |
 
-### 📘 SDSS Dataset Column Reference
+Install with:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+```bash
+python predict.py <u> <g> <r> <i> <z> <redshift>
+```
+
+## 📘 SDSS Dataset Column Reference
 
 | Column | Type | Meaning | Keep for ML? | Notes |
 |:--------|:------|:---------|:-------------|:------|
@@ -41,7 +69,7 @@ jupyter : data notebooks
 **Features used (`X`):** `['ra', 'dec', 'u', 'g', 'r', 'i', 'z', 'redshift']`  
 **Target (`y`):** `['class']`
 
-### 🧭 Overall Project Steps
+## 🧭 Overall Project Steps
 
 | Step | Name | Goal |
 |------|------|------|
@@ -52,3 +80,11 @@ jupyter : data notebooks
 | **5** | **Model Training** | Fit ML models (RandomForest, SVM, etc.) |
 | **6** | **Evaluation & Tuning** | Check accuracy, confusion matrix, improve |
 | **7** | **Documentation & Versioning** | Notebook cleanup, README, push to git |
+
+## 🚀 Future Work
+
+- Hyperparameter tuning & CV
+- Add model confidence visualizations
+- Deploy to Hugging Face Spaces
+- Add support for FITS photometric input
+- Try SVM / XGBoost / shallow neural net
