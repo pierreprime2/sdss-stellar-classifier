@@ -3,8 +3,8 @@ import joblib
 import pandas as pd
 
 # Load model and encoder
-model = joblib.load("notebooks/stellar_classifier.pkl")
-encoder = joblib.load("notebooks/label_encoder.pkl")
+model = joblib.load("models/stellar_classifier.pkl")
+encoder = joblib.load("models/label_encoder.pkl")
 
 def classify_stellar(u, g, r, i, z, redshift):
     # Compute engineered features

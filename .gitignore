@@ -1,4 +1,5 @@
 .venv/
+models/*.pkl
 __pycache__/
 # jupyter autosaves
 .ipynb_checkpoints/

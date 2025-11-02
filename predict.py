@@ -8,8 +8,8 @@ if len(sys.argv) != 7:
     sys.exit(1)
 
 # Load model + encoder
-model = joblib.load("notebooks/stellar_classifier.pkl")
-encoder = joblib.load("notebooks/label_encoder.pkl")
+model = joblib.load("models/stellar_classifier.pkl")
+encoder = joblib.load("models/label_encoder.pkl")
 
 # Expect 6 raw magnitudes + 1 redshift from CLI
 u, g, r, i, z, redshift = map(float, sys.argv[1:7])

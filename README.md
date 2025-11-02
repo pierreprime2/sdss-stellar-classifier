@@ -15,6 +15,22 @@ https://www.kaggle.com/datasets/fedesoriano/stellar-classification-dataset-sdss1
 > ⚠️ **Requires Python 3.11**  
 Gradio / pydantic-core are not yet compatible with Python 3.14.
 
+## 🌐 Live Demo (HuggingFace)
+
+Try the model in your browser:
+
+👉 https://huggingface.co/spaces/<your-username>/<your-space-name>
+
+Enter SDSS photometric magnitudes (`u, g, r, i, z`) and `redshift` → the app predicts **STAR**, **GALAXY**, or **QSO**.
+
+Example input:
+- u: 18.3  
+- g: 17.9  
+- r: 17.5  
+- i: 17.3  
+- z: 17.2  
+- redshift: 0.002
+
 ## Dependencies
 
 | Package | Purpose |
